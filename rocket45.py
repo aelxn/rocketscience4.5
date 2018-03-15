@@ -2,7 +2,7 @@ from ggrocket import Rocket, Planet
 from math import radians, sqrt, log
 from ggmath import InputButton, Timer, Label, Slider
 
-earth = Planet()  # no gravity to simplify things
+earth = Planet(planetmass=0)  # no gravity to simplify things
 
 Stage1Started = False
 Stage2Started = False
@@ -90,7 +90,7 @@ def GetThrust():
 def StartRocket():
     global Stage1Started
     global StartTime
-    if not (Stage1Started or Stage2Started):
+    if not (Stage1Started or Stage2Started or Stage3Started):
         Stage1Started = True
         # Note the starting time
         StartTime = rocket.shiptime
