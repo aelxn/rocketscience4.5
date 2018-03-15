@@ -56,7 +56,7 @@ def GetThrust():
     elif Stage3Started:
         tburn = tburn3
         Ftotal = Ftotal3
-    if Stage1Started or Stage2Started:
+    if Stage1Started or Stage2Started or Stage3Started:
         # get the burn time: seconds since start
         BurnTime = rocket.shiptime - StartTime
         # is it time to stop this stage?
