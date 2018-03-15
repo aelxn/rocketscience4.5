@@ -24,9 +24,9 @@ Ftotal2 = 8.01E5     # Total thrust (Newtons)
 tburn2 = 372         # Burn time (seconds)
 # THIRD STAGE
 me3 = 594            # Empty mass (kg)
-mp3 =  9181          # Propellent mass (kg)
+mp3 =  9181         # Propellent mass (kg)
 Ftotal3 = 8.01E5     # Total thrust (Newtons)
-tburn3 = 769         # Burn time (seconds)
+tburn3 = 37         # Burn time (seconds)
 # PAYLOAD
 mep = 13150          # Payload mass (kg)
 
@@ -35,9 +35,9 @@ mep = 13150          # Payload mass (kg)
 # In two stages!
 vmax1 = Ftotal1*tburn1/mp1*log((me1+mp1+me2+mp2+mep+me3+mp3)/(me1+me2+mp2+me3+mp3+mep))
 vmax2 = Ftotal2*tburn2/mp2*log((me2+mp2+me3+mp3+mep)/(me2+me3+mp3+mep))
-vmax3 = Ftotal2*tburn2/mp2*log((me3+mp3+mep)/(me3+mep))
+vmax3 = Ftotal2*tburn3/mp3*log((me3+mp3+mep)/(me3+mep))
 
-print("Predicted final staged rocket velocity (Rocket Equation), vmax: ", vmax1+vmax2, " m/s")
+print("Predicted final staged rocket velocity (Rocket Equation), vmax: ", vmax1+vmax2+vmax3, " m/s")
 
 # Create a function for determining the rocket thrust
 def GetThrust():
